@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tailwind UI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+  <!-- Navbar -->
+  <nav class="bg-blue-600 text-white p-4">
+    <div class="flex justify-between items-center">
+      <h1 class="font-bold text-lg">MySite</h1>
+
+      <!-- Button mobile -->
+      <button id="menuBtn" class="md:hidden text-2xl">
+        ☰
+      </button>
+
+      <!-- Menu desktop -->
+      <ul class="hidden md:flex gap-6">
+        <li><a href="#" class="hover:underline">Home</a></li>
+        <li><a href="#" class="hover:underline">About</a></li>
+        <li><a href="#" class="hover:underline">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Menu mobile -->
+    <ul id="mobileMenu" class="hidden flex-col mt-4 gap-2 md:hidden">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main -->
+  <div class="flex flex-col md:flex-row items-center justify-center min-h-[80vh] p-6 gap-10">
+
+    <!-- Logo -->
+    <div>
+      <img 
+        src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg"
+        alt="Tailwind CSS Logo"
+        class="w-40"
+      />
+    </div>
+
+    <!-- Content -->
+    <div class="text-center md:text-left max-w-md">
+      <h2 class="text-3xl font-bold mb-4">Tailwind CSS</h2>
+      <p class="mb-6 text-gray-600">
+        Learn Tailwind CSS quickly and easily with utility-first classes.
+      </p>
+
+      <button class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 hover:scale-105 transition duration-300">
+        Get Started
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Script -->
+  <script>
+    const btn = document.getElementById("menuBtn");
+    const menu = document.getElementById("mobileMenu");
+
+    btn.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+  </script>
+
+</body>
+</html>
